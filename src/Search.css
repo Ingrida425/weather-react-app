@@ -1,0 +1,13 @@
+.Search .navbar {
+  padding-top: 20px;
+  display: inline-flex;
+}
+.Search .btn {
+  border-color: purple;
+  color: purple;
+  margin: 0 5px;
+}
+.Search .btn:hover {
+  background-color: purple;
+  color: #fff;
+}
