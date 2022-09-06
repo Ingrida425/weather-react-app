@@ -1,27 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./RowSecond.css";
 
 export default function RowSecond() {
-  return (
-    <div className="RowSecond">
-      <div className="row">
-        <div className="col-1 clearfix float-left">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="weather icon"
-            className="cityIcon"
-          />
-        </div>
-        <h1 className="col-6 cityName"> Vilnius</h1>
-        <div className="col-2 temp-city">25</div>
-        <div className="col-3">
-          <strong className="degree">
-            <a href="/" className="celsiusLink">
-              ℃
-            </a>
-          </strong>
+  const [ready, setReady] = useState(false);
+  const [temperature, setTemperature] = useState("");
+  function weatherInfo(response) {
+    console.log(response.data);
+    setTemperature(response.data.main.temp);
+    setReady(true);
+  }
+  if (ready) {
+    return (
+      <div className="RowSecond">
+        <div className="row">
+          <div className="col-1 clearfix float-left">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="weather icon"
+              className="cityIcon"
+            />
+          </div>
+          <h1 className="col-6 cityName"> Vilnius</h1>
+          <div className="col-2 temp-city">{Math.round(temperature)} </div>
+          <div className="col-3">
+            <strong className="degree">
+              <a href="/" className="celsiusLink">
+                ℃
+              </a>
+            </strong>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    let apiKey = `72ed8a85e3f275bf8313543794566f89`;
+    let city = "Vilnius";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    axios.get(apiURL).then(weatherInfo);
+
+    return "Loading...";
+  }
 }
