@@ -38,3 +38,9 @@
   text-align: left;
   list-style: none;
 }
+.lastUpdated {
+  font-size: 1rem;
+  font-weight: bold;
+  list-style: none;
+  text-transform: capitalize;
+}

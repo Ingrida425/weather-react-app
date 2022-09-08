@@ -9,7 +9,7 @@ export default function App() {
     <div className="App">
       <div className="ContainerWeather">
         <RowFirst />
-        <RowSecond />
+        <RowSecond defaultCity="Vilnius" />
         <RowFourth />
       </div>
       <Footer />
