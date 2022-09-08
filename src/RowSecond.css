@@ -32,3 +32,9 @@
   --bs-gutter-x: 2rem;
   --bs-gutter-y: 0;
 }
+.conditions {
+  color: purple;
+  font-weight: 500;
+  text-align: left;
+  list-style: none;
+}

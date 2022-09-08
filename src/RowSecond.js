@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import LastUpdated from "./LastUpdated";
 import "./RowSecond.css";
 
 export default function RowSecond() {
@@ -29,6 +30,22 @@ export default function RowSecond() {
                 ℃
               </a>
             </strong>
+          </div>
+        </div>
+        <div className="row">
+          <LastUpdated />
+          <div className="col-md-3">
+            <ul className="conditions">
+              <li>
+                Real feel: <span id="real-feel">23</span> ℃
+              </li>
+              <li>
+                Humidity: <span id="humidity">15</span> %
+              </li>
+              <li>
+                Wind: <span id="wind">12</span> km/h
+              </li>
+            </ul>
           </div>
         </div>
       </div>
