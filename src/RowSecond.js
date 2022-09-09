@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormatedDate from "./FormatedDate";
 import "./RowSecond.css";
 
 export default function RowSecond(props) {
@@ -13,7 +14,7 @@ export default function RowSecond(props) {
       realFeel: response.data.main.feels_like,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      date: "Wed 15:40",
+      date: new Date(response.data.dt * 1000),
     });
     console.log(response.data);
   }
@@ -43,7 +44,9 @@ export default function RowSecond(props) {
         <div className="row">
           <div className="col">
             <ul className="lastUpdated">
-              <li>Last updated: {weatherData.date} </li>
+              <li>
+                Last updated: <FormatedDate date={weatherData.date} />
+              </li>
               <li>{weatherData.description} </li>
             </ul>
           </div>
