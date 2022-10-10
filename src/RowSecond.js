@@ -1,6 +1,7 @@
 import React from "react";
 
 import FormatedDate from "./FormatedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import "./RowSecond.css";
 
 export default function RowSecond(props) {
@@ -15,16 +16,7 @@ export default function RowSecond(props) {
           />
         </div>
         <h1 className="col-6 cityName"> {props.data.city}</h1>
-        <div className="col-2 temp-city">
-          {Math.round(props.data.temperature)}{" "}
-        </div>
-        <div className="col-3">
-          <strong className="degree">
-            <a href="/" className="celsiusLink">
-              ℃
-            </a>
-          </strong>
-        </div>
+        <WeatherTemperature celsius={props.data.temperature} />
       </div>
       <div className="row">
         <div className="col">

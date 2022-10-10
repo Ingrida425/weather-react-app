@@ -9,21 +9,7 @@
   font-weight: bold;
   font-size: 3rem;
 }
-.RowSecond .temp-city {
-  font-weight: 600;
-  font-size: 3rem;
-  text-align: right;
-}
-.RowSecond .degree {
-  font-size: 1.3rem;
-  position: relative;
-  right: 25px;
-  top: 15px;
-}
-.RowSecond .celsiusLink {
-  text-decoration: none;
-  color: black;
-}
+
 .RowSecond .active {
   color: black;
   cursor: default;
