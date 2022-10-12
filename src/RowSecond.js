@@ -2,6 +2,7 @@ import React from "react";
 
 import FormatedDate from "./FormatedDate";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherIcon from "./WeatherIcon";
 import "./RowSecond.css";
 
 export default function RowSecond(props) {
@@ -9,11 +10,7 @@ export default function RowSecond(props) {
     <div className="RowSecond">
       <div className="row">
         <div className="col-1 clearfix float-left">
-          <img
-            src={props.data.iconUrl}
-            alt={props.data.description}
-            className="cityIcon"
-          />
+          <WeatherIcon code={props.data.icon} />
         </div>
         <h1 className="cityName col-5"> {props.data.city}</h1>
         <WeatherTemperature celsius={props.data.temperature} />
