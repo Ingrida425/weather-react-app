@@ -4,5 +4,6 @@
   text-align: left;
 }
 .degree {
-  font-size: 2rem;
+  font-size: 1.3rem;
+  display: inline-flex;
 }

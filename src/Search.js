@@ -36,10 +36,14 @@ export default function Search(props) {
   if (weatherData.ready) {
     return (
       <div className="row">
-        <div className="Search col-10">
+        <div className="Search col-12">
           <nav className="navbar navbar-light bg-transparent">
             <div className="container-fluid">
-              <form className="d-flex" id="search-form" onSubmit={handleSubmit}>
+              <form
+                className="d-flex row-cols-lg-auto align-items-center"
+                id="search-form"
+                onSubmit={handleSubmit}
+              >
                 <input
                   className="form-control me-2"
                   type="search"
@@ -48,7 +52,7 @@ export default function Search(props) {
                   id="city-input"
                   onChange={handleCityChange}
                 />
-                <button className="btn" type="submit" id="search-button">
+                <button className="btn " type="submit" id="search-button">
                   Search
                 </button>
                 <button className="btn" type="button" id="current-button">

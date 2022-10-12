@@ -15,7 +15,7 @@ export default function RowSecond(props) {
             className="cityIcon"
           />
         </div>
-        <h1 className="col-6 cityName"> {props.data.city}</h1>
+        <h1 className="cityName col-5"> {props.data.city}</h1>
         <WeatherTemperature celsius={props.data.temperature} />
       </div>
       <div className="row">
