@@ -2,7 +2,15 @@ import React from "react";
 
 export default function FormatedDate(props) {
   console.log(props.date);
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let day = days[props.date.getDay()];
   let hours = props.date.getHours();
   if (hours < 10) {
@@ -13,9 +21,9 @@ export default function FormatedDate(props) {
     minutes = `0${minutes}`;
   }
   return (
-    <div>
+    <span>
       {" "}
       {day} {hours}:{minutes}{" "}
-    </div>
+    </span>
   );
 }

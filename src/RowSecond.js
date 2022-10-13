@@ -9,7 +9,7 @@ export default function RowSecond(props) {
   return (
     <div className="RowSecond">
       <div className="row">
-        <div className="col-1 clearfix float-left">
+        <div className="col-1 clearfix float-left cityIcon">
           <WeatherIcon code={props.data.icon} />
         </div>
         <h1 className="cityName col-5"> {props.data.city}</h1>
