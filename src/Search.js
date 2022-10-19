@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import RowSecond from "./RowSecond";
+import DailyForecast from "./DailyForecast";
 import "./RowSecond.css";
 import "./Search.css";
 
@@ -63,6 +64,7 @@ export default function Search(props) {
           </nav>
         </div>
         <RowSecond data={weatherData} />
+        <DailyForecast />
       </div>
     );
   } else {

@@ -1,0 +1,10 @@
+.DailyForecast {
+  text-align: center;
+}
+.temp-day-min {
+  opacity: 0.7;
+  margin-left: 5px;
+}
+.day {
+  font-weight: 700;
+}

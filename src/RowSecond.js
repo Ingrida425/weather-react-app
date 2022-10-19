@@ -10,7 +10,7 @@ export default function RowSecond(props) {
     <div className="RowSecond">
       <div className="row">
         <div className="col-1 clearfix float-left cityIcon">
-          <WeatherIcon code={props.data.icon} />
+          <WeatherIcon code={props.data.icon} size={54} />
         </div>
         <h1 className="cityName col-5"> {props.data.city}</h1>
         <WeatherTemperature celsius={props.data.temperature} />
