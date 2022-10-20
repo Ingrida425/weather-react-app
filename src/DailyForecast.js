@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import WeatherIcon from "./WeatherIcon";
 import "./DailyForecast.css";
 import Axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function DailyForecast(props) {
   const [loaded, setLoaded] = useState(false);
@@ -16,17 +16,13 @@ export default function DailyForecast(props) {
       <div className="DailyForecast">
         <div className="row">
           <div className="col">
-            <WeatherIcon code="01d" size={40} />
-            <div className="day"> Thu</div>
-
-            <span className="temp-day-max">16°</span>
-            <span className="temp-day-min">5°</span>
+            <WeatherForecastDay data={forecast[0]} />
           </div>
         </div>
       </div>
     );
   } else {
-    let apiKey = `72ed8a85e3f275bf8313543794566f89`;
+    let apiKey = `a33b693cfbefd271b0ed075f9a8f65f0`;
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
