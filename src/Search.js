@@ -11,6 +11,7 @@ export default function Search(props) {
   function weatherInfo(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
@@ -64,7 +65,7 @@ export default function Search(props) {
           </nav>
         </div>
         <RowSecond data={weatherData} />
-        <DailyForecast />
+        <DailyForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {

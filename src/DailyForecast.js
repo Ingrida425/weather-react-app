@@ -1,16 +1,17 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import "./DailyForecast.css";
-import { Axios } from "axios";
+import Axios from "axios";
 
-export default function DailyForecast() {
+export default function DailyForecast(props) {
   function handleResponse(response) {
     console.log(response.data);
   }
-  let apiKey = `a2dda52dce059eb8a14e95aaa0db6ab7`;
-  let longitude = -9.1;
-  let latitude = 38.7;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+  console.log(props);
+  let apiKey = `72ed8a85e3f275bf8313543794566f89`;
+  let longitude = props.coordinates.lon;
+  let latitude = props.coordinates.lat;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   Axios.get(apiUrl).then(handleResponse);
   return (
     <div className="DailyForecast">
