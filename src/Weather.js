@@ -1,7 +1,6 @@
 import React from "react";
 
 import FormatedDate from "./FormatedDate";
-import WeatherTemperature from "./WeatherTemperature";
 import WeatherIcon from "./WeatherIcon";
 import "./Weather.css";
 
@@ -13,7 +12,10 @@ export default function RowSecond(props) {
           <WeatherIcon code={props.data.icon} size={54} />
         </div>
         <h1 className="cityName col-5"> {props.data.city}</h1>
-        <WeatherTemperature celsius={props.data.temperature} />
+        <div className="temp-city col-5">
+          <span> {Math.round(props.data.temperature)}</span>
+          <span className="degree">℃</span>
+        </div>
       </div>
       <div className="row">
         <div className="col">
