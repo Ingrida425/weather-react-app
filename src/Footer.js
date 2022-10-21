@@ -12,7 +12,15 @@ export default function Footer() {
         {" "}
         open-sourced on GitHub
       </a>{" "}
-      and <a href="/"> on Netlify</a>
+      and{" "}
+      <a
+        href="https://resonant-centaur-38371b.netlify.app/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {" "}
+        on Netlify
+      </a>
     </small>
   );
 }
