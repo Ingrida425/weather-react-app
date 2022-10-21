@@ -9,14 +9,13 @@ export default function DailyForecast(props) {
 
   useEffect(() => {
     setLoaded(false);
-  }, [props]);
+  }, [props.coordinates]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
   if (loaded) {
-    console.log(forecast);
     return (
       <div className="DailyForecast">
         <div className="row">
@@ -27,6 +26,8 @@ export default function DailyForecast(props) {
                   <WeatherForecastDay data={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>

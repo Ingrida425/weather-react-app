@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import RowSecond from "./RowSecond";
+import Weather from "./Weather";
 import DailyForecast from "./DailyForecast";
-import "./RowSecond.css";
+import "./Weather.css";
 import "./Search.css";
 
 export default function Search(props) {
@@ -38,7 +38,7 @@ export default function Search(props) {
   if (weatherData.ready) {
     return (
       <div className="row">
-        <div className="Search col-12">
+        <div className="Search col">
           <nav className="navbar navbar-light bg-transparent">
             <div className="container-fluid">
               <form
@@ -57,14 +57,11 @@ export default function Search(props) {
                 <button className="btn " type="submit" id="search-button">
                   Search
                 </button>
-                <button className="btn" type="button" id="current-button">
-                  Current
-                </button>
               </form>
             </div>
           </nav>
         </div>
-        <RowSecond data={weatherData} />
+        <Weather data={weatherData} />
         <DailyForecast coordinates={weatherData.coordinates} />
       </div>
     );

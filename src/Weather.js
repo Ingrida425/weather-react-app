@@ -3,7 +3,7 @@ import React from "react";
 import FormatedDate from "./FormatedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherIcon from "./WeatherIcon";
-import "./RowSecond.css";
+import "./Weather.css";
 
 export default function RowSecond(props) {
   return (
